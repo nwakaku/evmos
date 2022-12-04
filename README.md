@@ -12,7 +12,7 @@ Built with Evmos and nft.storage (IPFS).
 
 ## How to use EVMUSIC
 
-- Sign into OCTAVE3 with your favorite wallet (MetaMask etc.)
+- Sign into EVMUSIC with your favorite wallet (MetaMask etc.)
 - To mint an NFT, navigate to home screen, then click “Mint Song NFT” button. A modal will open, and you can set your NFT’s data there and set ad space price
 - To advertise on the platform, click the “Ad marketplace” button in the header. Here you’ll have the option to rent ad space on a song of your choice
 
