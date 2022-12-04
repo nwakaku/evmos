@@ -1,0 +1,91 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: AdvNFT
+    network: mainnet
+    source:
+      address: '0xe8d5313592e7f284d7b87270e889c9651c3a7A89'
+      abi: AdvNFT
+      startBlock: 3
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - AdvNFTCreated
+        - Paused
+        - Transfer
+        - Unpaused
+        - AdvNFTHashUpdated
+      abis:
+        - name: AdvNFT
+          file: ./abis/AdvNFT.json
+      eventHandlers:
+        - event: AdvNFTCreated(string,string,uint256,uint32,uint256)
+          handler: handleAdvNFTCreated
+        - event: AdvNFTHashUpdated(uint256,string,string)
+          handler: handleAdvNFTHashUpdated
+        - event: Paused(address)
+          handler: handlePaused
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: Unpaused(address)
+          handler: handleUnpaused
+      file: ./src/adv-nft.ts
+  - kind: ethereum
+    name: MusicNFT
+    network: mainnet
+    source:
+      address: '0xb06e737940b4212B9809e50Fe223Bd76bF13D99f'
+      abi: MusicNFT
+      startBlock: 3
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - MusicNFTCreated
+        - MusicNFTPaused
+        - Transfer
+        - MusicNFTUnpaused
+      abis:
+        - name: MusicNFT
+          file: ./abis/MusicNFT.json
+      eventHandlers:
+        - event: MusicNFTCreated(uint256,indexed address,string,string)
+          handler: handleMusicNFTCreated
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleMusicNFTTransfer
+      file: ./src/music-nft.ts
+  - kind: ethereum
+    name: MarketPlace
+    network: mainnet
+    source:
+      address: '0xD2af673b477678EfECb8169309F6AaEAab290DF1'
+      abi: MarketPlace
+      startBlock: 3
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - MarketItemCreated
+        - MarketItemSold
+        - MarketItemRemoved
+      abis:
+        - name: MarketPlace
+          file: ./abis/MarketPlace.json
+      eventHandlers:
+        - event: >-
+            MarketItemCreated(indexed uint256,indexed address,indexed
+            uint256,string,address,address,uint256,bool)
+          handler: handleMarketItemCreated
+        - event: >-
+            MarketItemSold(indexed uint256,indexed address,indexed
+            uint256,address,uint256)
+          handler: handleMarketItemSold
+        - event: MarketItemRemoved(uint256)
+          handler: handleMarketItemRemoved
+      file: ./src/marketplace.ts
