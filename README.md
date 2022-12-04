@@ -16,11 +16,10 @@ Built with Evmos and nft.storage (IPFS).
 - To mint an NFT, navigate to home screen, then click “Mint Song NFT” button. A modal will open, and you can set your NFT’s data there and set ad space price
 - To advertise on the platform, click the “Ad marketplace” button in the header. Here you’ll have the option to rent ad space on a song of your choice
 
-## Credits
-
-- [https://github.com/thisisommore](https://github.com/thisisommore)
-- [https://github.com/camarilla33](https://github.com/camarilla33)
-- [https://github.com/mbappai](https://github.com/mbappai)
+# Name:
+ Nwakaku Wisdom
+# Discord:
+ wisdom_chris#9551
 
 # The MIT License (MIT)
 
